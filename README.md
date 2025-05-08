@@ -1,12 +1,20 @@
 # SoftSell - Marketing Website
 
-![SoftSell Logo](public/softshell-logo.png)
+![SoftSell Logo](public/favicon.png)
 
 A responsive marketing website for SoftSell, a platform that helps businesses recover value from unused software licenses.
 
 ## 🚀 Live Demo
+## Live Site : https://soft-sell-fawn.vercel.app/
+   ## Gdrive : https://drive.google.com/file/d/1m1A-zz31LF2_f1Ob8KkontNlzfzfTDsC/view
+<div align="center">
+    
 
-[View the live site](#) <!-- Replace with actual deploy URL when available -->
+
+  <a href="https://youtu.be/gWDoxEnFSzI" target="_blank">
+    <img src="https://img.youtube.com/vi/gWDoxEnFSzI/hqdefault.jpg" alt="Watch the demo video" width="640" height="360" />
+  </a>
+</div>
 
 ## ✨ Features
 
@@ -23,14 +31,22 @@ A responsive marketing website for SoftSell, a platform that helps businesses re
 - **Framework**: [Next.js 14](https://nextjs.org/) with App Router
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) for responsive, utility-first styling
 - **Animations**: [Framer Motion](https://www.framer.com/motion/) for sophisticated animations and transitions
-- **Typography**: Custom typography with responsive font sizing
-- **Icons**: Custom SVG icons
 - **Development**: TypeScript for type safety
 - **AI Integration**:
   - [Groq SDK](https://groq.com) for fast inference
   - [Llama model](https://ai.meta.com/llama/) for natural language processing
   - Secure API implementation with server-side processing
 
+## 🤖 Chatbot Implementation
+
+The AI-powered chatbot enhances user engagement and provides instant support:
+
+- **Backend Implementation** - Runs on `/api/chat` route to protect API keys and ensure security
+- **AI Model** - Utilizes the Llama model via Groq's high-performance inference API
+- **Secure Architecture** - Client-side widget communicates with server-side API to prevent exposure of credentials
+- **Contextual Awareness** - Maintains conversation context for natural interactions
+- **Custom Styling** - Integrated with the site's design system for a cohesive look and feel
+- **Responsive Design** - Adapts to all screen sizes with an expandable/collapsible UI
 ## 🎨 Design Choices
 
 ### Color Palette
@@ -66,16 +82,7 @@ Animations were strategically implemented to:
 - Create a sense of polish and quality
 - Provide feedback for user interactions
 
-## 🤖 Chatbot Implementation
 
-The AI-powered chatbot enhances user engagement and provides instant support:
-
-- **Backend Implementation** - Runs on `/api/chat` route to protect API keys and ensure security
-- **AI Model** - Utilizes the Llama model via Groq's high-performance inference API
-- **Secure Architecture** - Client-side widget communicates with server-side API to prevent exposure of credentials
-- **Contextual Awareness** - Maintains conversation context for natural interactions
-- **Custom Styling** - Integrated with the site's design system for a cohesive look and feel
-- **Responsive Design** - Adapts to all screen sizes with an expandable/collapsible UI
 
 ## 📱 Responsive Design Strategy
 
