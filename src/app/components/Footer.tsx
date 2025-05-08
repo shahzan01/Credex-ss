@@ -119,6 +119,37 @@ export default function Footer() {
             >
               &copy; {currentYear} SoftSell. All rights reserved.
             </motion.p>
+
+            <motion.div
+              className="flex justify-center items-center gap-4 mt-4"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <span className="text-[var(--muted-foreground)]">
+                Made by Shahzan
+              </span>
+              <motion.a
+                href="https://www.linkedin.com/in/mohd-shahzan1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--muted-foreground)] hover:text-[var(--primary)]"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                LinkedIn
+              </motion.a>
+              <motion.a
+                href="https://github.com/shahzan01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--muted-foreground)] hover:text-[var(--primary)]"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                GitHub
+              </motion.a>
+            </motion.div>
           </div>
         </ScrollAnimationWrapper>
       </div>

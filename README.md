@@ -153,3 +153,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Created for demonstration purposes only
 - Llama model by Meta AI
 - Groq for providing high-performance inference API
+- Developed by Shahzan - [LinkedIn](https://www.linkedin.com/in/mohd-shahzan1/) | [GitHub](https://github.com/shahzan01)

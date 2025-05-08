@@ -49,6 +49,30 @@ export default function Navbar() {
     { name: "Get Started", href: "#contact", isButton: true, id: "getStarted" },
   ];
 
+  // Handle mobile menu item click
+  const handleMobileMenuClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+
+    // Wait for menu to close before scrolling
+    setTimeout(() => {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const topOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - topOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 300); // Match the transition duration
+  };
+
   return (
     <motion.header
       className="py-4 border-b border-[var(--border)] sticky top-0 bg-[var(--background)] z-50"
@@ -84,7 +108,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2"
+            className="p-2 relative z-50"
             aria-label="Toggle menu"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -179,13 +203,13 @@ export default function Navbar() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.nav
-              className="block absolute top-full left-0 right-0 bg-[var(--background)] border-b border-[var(--border)] p-4 md:hidden"
+              className="block fixed top-[64px] left-0 right-0 bg-[var(--background)] border-b border-[var(--border)] p-4 md:hidden shadow-lg z-40"
               variants={menuVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
             >
-              <motion.ul className="flex flex-col gap-6 items-center">
+              <motion.ul className="flex flex-col gap-6 items-center py-4">
                 {navItems.map((item, i) => (
                   <motion.li
                     key={item.name}
@@ -196,10 +220,7 @@ export default function Navbar() {
                       <motion.a
                         href={item.href}
                         className="btn btn-primary"
-                        onClick={(e) => {
-                          setIsMenuOpen(false);
-                          handleSmoothScroll(e, 80);
-                        }}
+                        onClick={(e) => handleMobileMenuClick(e, item.href)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -209,10 +230,7 @@ export default function Navbar() {
                       <motion.a
                         href={item.href}
                         className="hover:text-[var(--primary)]"
-                        onClick={(e) => {
-                          setIsMenuOpen(false);
-                          handleSmoothScroll(e, 80);
-                        }}
+                        onClick={(e) => handleMobileMenuClick(e, item.href)}
                         whileHover={{ color: "var(--primary)" }}
                       >
                         {item.name}
