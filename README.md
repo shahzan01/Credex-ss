@@ -16,6 +16,7 @@ A responsive marketing website for SoftSell, a platform that helps businesses re
 - **Smooth Scroll Navigation** - Enhanced UX with smooth scrolling between sections
 - **Modern Design** - Clean, professional aesthetic with an orange-focused color scheme
 - **Optimized Performance** - Fast loading times with Next.js optimizations
+- **AI-Powered Chatbot** - Secure and responsive customer support chatbot using Llama model
 
 ## 🛠️ Technology Stack
 
@@ -25,6 +26,10 @@ A responsive marketing website for SoftSell, a platform that helps businesses re
 - **Typography**: Custom typography with responsive font sizing
 - **Icons**: Custom SVG icons
 - **Development**: TypeScript for type safety
+- **AI Integration**:
+  - [Groq SDK](https://groq.com) for fast inference
+  - [Llama model](https://ai.meta.com/llama/) for natural language processing
+  - Secure API implementation with server-side processing
 
 ## 🎨 Design Choices
 
@@ -61,6 +66,17 @@ Animations were strategically implemented to:
 - Create a sense of polish and quality
 - Provide feedback for user interactions
 
+## 🤖 Chatbot Implementation
+
+The AI-powered chatbot enhances user engagement and provides instant support:
+
+- **Backend Implementation** - Runs on `/api/chat` route to protect API keys and ensure security
+- **AI Model** - Utilizes the Llama model via Groq's high-performance inference API
+- **Secure Architecture** - Client-side widget communicates with server-side API to prevent exposure of credentials
+- **Contextual Awareness** - Maintains conversation context for natural interactions
+- **Custom Styling** - Integrated with the site's design system for a cohesive look and feel
+- **Responsive Design** - Adapts to all screen sizes with an expandable/collapsible UI
+
 ## 📱 Responsive Design Strategy
 
 - **Mobile-First Approach**: Designed for small screens first, then enhanced for larger viewports
@@ -76,6 +92,7 @@ The application is built with a modular component architecture:
 - **Section Components**: HeroSection, HowItWorksSection, WhyChooseUsSection, TestimonialsSection, ContactSection
 - **UI Components**: ThemeToggle, ScrollAnimationWrapper, HeroAnimationBox, ChatWidget
 - **Utility Functions**: Animations, smooth scrolling, theme management
+- **API Routes**: Secure endpoints for chatbot functionality
 
 ## 💻 Development Approach
 
@@ -100,13 +117,23 @@ cd soft-sell
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+
+```bash
+# Create .env.local file
+touch .env.local
+
+# Add your Groq API key
+echo "GROQ_API_KEY=your_api_key_here" >> .env.local
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🚀 Building for Production
 
@@ -119,8 +146,10 @@ npm run start
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## �� Acknowledgements
+## 👏 Acknowledgements
 
 - Design inspiration from modern SaaS websites
 - Icons and animations inspired by current web design trends
 - Created for demonstration purposes only
+- Llama model by Meta AI
+- Groq for providing high-performance inference API
