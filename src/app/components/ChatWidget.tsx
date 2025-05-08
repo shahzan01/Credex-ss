@@ -52,6 +52,10 @@ export default function ChatWidget() {
             }
 
             const decoded = decoder.decode(value, { stream: true });
+            if (decoded == "done") {
+              done = true;
+              break;
+            }
             currentText += decoded;
 
             setMessages((prev) => {

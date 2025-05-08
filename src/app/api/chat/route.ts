@@ -34,8 +34,6 @@ export async function POST(req: NextRequest) {
             }
           }
 
-          // Ensure "done" is sent at the end
-          controller.enqueue("done");
           controller.close();
         } catch (error) {
           console.error("Error while streaming:", error);
