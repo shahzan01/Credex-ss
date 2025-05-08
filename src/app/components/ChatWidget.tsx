@@ -19,20 +19,6 @@ export default function ChatWidget() {
   const [inputValue, setInputValue] = useState<string>("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const faqResponses: Record<string, string> = {
-    "how do i sell my license":
-      "It's easy! Just upload your license details through our form, and we'll provide a valuation within 24 hours. Once you accept, we'll process payment within 48 hours.",
-    "what types of licenses do you buy":
-      "We purchase a wide range of software licenses including Microsoft Office, Adobe Creative Cloud, AutoCAD, Windows Server, SQL Server, and many more. If you're unsure, just ask us!",
-    "how much is my license worth":
-      "The value depends on factors like software type, version, remaining subscription time, and market demand. Upload your details for a free valuation with no obligation.",
-    "how long does it take to get paid":
-      "After accepting our offer, you typically receive payment within 48 hours via your preferred payment method.",
-    "is the process secure":
-      "Absolutely! We use bank-level encryption for all transactions and follow strict data protection protocols to keep your information safe.",
-    "can i sell multiple licenses":
-      "Yes! We handle both individual licenses and bulk transactions. In fact, selling multiple licenses often qualifies for volume bonuses.",
-  };
   const handleSend = async () => {
     if (!inputValue.trim()) return;
 
@@ -55,7 +41,7 @@ export default function ChatWidget() {
     setMessages((prev) => [...prev, { type: "bot", text: "" }]);
     // Creating a ReadableStream to handle the stream of data from the response body
     const stream = new ReadableStream({
-      async start(controller) {
+      async start() {
         try {
           while (!done) {
             const { value, done: isDone } = await reader!.read();

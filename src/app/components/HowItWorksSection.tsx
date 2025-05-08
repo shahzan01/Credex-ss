@@ -79,8 +79,8 @@ export default function HowItWorksSection() {
               How It Works
             </h2>
             <p className="text-[var(--muted-foreground)] max-w-2xl mx-auto">
-              We've simplified the process of selling your unused software
-              licenses. Just three easy steps.
+              {` We've simplified the process of selling your unused software
+              licenses. Just three easy steps.`}
             </p>
           </div>
         </ScrollAnimationWrapper>

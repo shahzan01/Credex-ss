@@ -4,12 +4,6 @@ import { system_prompt } from "@/app/lib/chatPrompt";
 const api_key = process.env.GROQ_API_KEY as string;
 const groq = new Groq({ apiKey: api_key });
 
-async function main(message: String) {
-  if (!message) {
-    return;
-  }
-}
-
 export async function POST(req: NextRequest) {
   const { message } = await req.json();
   console.log(message);

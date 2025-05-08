@@ -12,7 +12,6 @@ import {
   formShineEffect,
   heroButtonAnimation,
 } from "../utils/animations";
-import { handleSmoothScroll } from "../utils/smoothScroll";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
