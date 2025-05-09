@@ -1,6 +1,6 @@
 import { Groq } from "groq-sdk";
 import { NextRequest, NextResponse } from "next/server";
-import { system_prompt } from "@/app/lib/chatPrompt";
+import { system_prompt } from "@/lib/chatPrompt";
 const api_key = process.env.GROQ_API_KEY as string;
 const groq = new Groq({ apiKey: api_key });
 
